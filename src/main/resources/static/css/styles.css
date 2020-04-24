@@ -1,0 +1,29 @@
+
+.navbar-brand {
+    border-right: 2px solid #e4e4e4;
+    padding-right: 17px;
+}
+
+.navbar-brand img {
+    width: 50px;
+}
+
+.card:hover {
+    -webkit-box-shadow: 2px 2px 5px 0px rgb(203, 203, 203);
+    -moz-box-shadow: 2px 2px 5px 0px rgb(203, 203, 203);
+    box-shadow: 2px 2px 5px 0px rgb(203, 203, 203);
+}
+
+.card .avatar {
+    width: 35px;
+}
+
+.card .fa {
+    font-size: 18px;
+    color: #b9b9b9;
+    cursor: pointer;
+}
+
+.image-rounded {
+    border-radius: 50%;
+}

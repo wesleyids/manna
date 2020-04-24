@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Manna</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+
+        <script th:src="@{/js/angular.min.js}"></script>
+        <script th:src="@{/js/stomp/sockjs-0.3.4.js}"></script>
+        <script th:src="@{/js/stomp/stomp.js}"></script>
+        <script th:src="@{/js/app.js}"></script>
+    </head>
+
+    <body ng-app="appManager">
+
+        <nav class="navbar navbar-light">
+            <a class="navbar-brand">
+                <img th:src="@{/images/logo.png}">
+            </a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#"></a>
+            </li>
+        </ul>
+
+        <a th:href="@{/project/add}">Criar projeto</a>
+        <a th:href="@{/task/add}">Criar atividade</a>
+
+        <div>
+            <h5>Projects</h5>
+            <ul>
+                <li th:each="project: ${projects}" th:text="${project.name}"></li>
+            </ul>
+        </div>
+
+        <div class="container" ng-controller="BoardController" ng-init="init()">
+
+            <div class="row">
+                <div class="col-3">
+                    <h3>A Fazer</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a class="card-link">
+                                <img class="avatar image-rounded" th:src="@{/images/avatar.png}">
+                            </a>
+                            <a class="card-link">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <h3>Fazendo</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a class="card-link">
+                                <img class="avatar image-rounded" th:src="@{/images/avatar.png}">
+                            </a>
+                            <a class="card-link">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <h3>Finalizado</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a class="card-link">
+                                <img class="avatar image-rounded" th:src="@{/images/avatar.png}">
+                            </a>
+                            <a class="card-link">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <h3>Testado</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a class="card-link">
+                                <img class="avatar image-rounded" th:src="@{/images/avatar.png}">
+                            </a>
+                            <a class="card-link">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

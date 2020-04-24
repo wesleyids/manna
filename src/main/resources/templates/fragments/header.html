@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <header th:fragment="header">
+            <nav class="navbar navbar-light">
+                <a class="navbar-brand">
+                    <img th:src="@{/images/logo.png}">
+                </a>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#"></a>
+                </li>
+            </ul>
+        </header>
+    </body>
+</html>

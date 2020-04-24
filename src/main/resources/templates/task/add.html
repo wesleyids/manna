@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head th:insert="fragments/head :: head">
+
+    </head>
+
+    <body>
+
+        <div th:insert="fragments/header :: header">
+
+        </div>
+
+        <h1>Criar atividade</h1>
+
+        <div class="container">
+            <div class="col-6">
+                <form th:object="${task}" th:action="@{/task/save}" method="POST">
+
+                    <div class="mb-3">
+                        <label for="project">Project</label>
+                        <select class="custom-select d-block w-100" id="project" th:field="*{projectId}" required="">
+                            <option value="0">Choose...</option>
+                            <option th:each="p: ${projects}" th:text="${p.name}" th:value="${p.id}"></option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="status">Status</label>
+                        <select class="custom-select d-block w-100" id="status" th:field="*{status}" required="">
+                            <option value="0">Choose...</option>
+                            <option value="1">United States</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="priority">Priority</label>
+                        <select class="custom-select d-block w-100" id="priority" th:field="*{priority}" required="">
+                            <option value="0">Choose...</option>
+                            <option th:each="p: ${priorities}" th:text="${p}" th:value="${p}"></option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" placeholder="" th:field="*{title}" required="">
+                        <div class="invalid-feedback">
+                            Please enter your shipping address.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" placeholder="" th:field="*{description}" required=""></textarea>
+                        <div class="invalid-feedback">
+                            Please enter your shipping address.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Estimated time</label>
+                        <input type="text" class="form-control" id="time" placeholder="" th:field="*{estimatedTime}" required="">
+                        <div class="invalid-feedback">
+                            Please enter your shipping address.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="responsible">Responsible</label>
+                        <input type="text" class="form-control" id="responsible" placeholder="" th:field="*{responsibleId}" required="">
+                        <div class="invalid-feedback">
+                            Please enter your shipping address.
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-sm" type="submit">Save</button>
+                    <a th:href="@{/}" class="btn btn-default btn-sm">Cancel</a>
+
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
